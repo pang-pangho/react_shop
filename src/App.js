@@ -9,9 +9,12 @@ import { useState } from "react";
 import data from "./data.js";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Detail from "./routes/detail.js";
+import axios from "axios";
 
 function App() {
-  let [shose] = useState(data);
+  let [shose, setShose] = useState(data);
+  let [count, setCount] = useState(1);
+  let [load, setLoad] = useState(true);
   let navigate = useNavigate(); // 페이지 이동을 도와주는 함수
   return (
     <div className="App">
@@ -50,6 +53,58 @@ function App() {
                   })}
                 </div>
               </div>
+              <button
+                onClick={() => {
+                  setCount(count + 1);
+                  if (count === 1) {
+                    {
+                      load && <Loading />;
+                    }
+
+                    axios
+                      .get("https://codingapple1.github.io/shop/data2.json")
+                      .then((result) => {
+                        let newShoes = result.data;
+
+                        // 기존 정보와 새로운 정보를 합칩니다.
+                        let updatedShoes = [...shose, ...newShoes];
+
+                        // 합쳐진 정보로 상태를 업데이트합니다.
+                        setLoad(!load);
+                        setShose(updatedShoes);
+                        console.log(result.data);
+                        console.log(shose);
+                      })
+                      .catch(() => {
+                        console.log("실패하였습니다.");
+                      });
+                  } else if (count === 2) {
+                    {
+                      load && <Loading />;
+                    }
+                    axios
+                      .get("https://codingapple1.github.io/shop/data3.json")
+                      .then((result) => {
+                        let newShoes = result.data;
+
+                        // 기존 정보와 새로운 정보를 합칩니다.
+                        let updatedShoes = [...shose, ...newShoes];
+                        setLoad(!load);
+                        // 합쳐진 정보로 상태를 업데이트합니다.
+                        setShose(updatedShoes);
+                        console.log(result.data);
+                        console.log(shose);
+                      })
+                      .catch(() => {
+                        console.log("실패하였습니다.");
+                      });
+                  } else if (count <= 3) {
+                    alert("더 이상 상품이 없습니다.");
+                  }
+                }}
+              >
+                버튼
+              </button>
             </>
           }
         />
@@ -91,5 +146,11 @@ function Event() {
     </>
   );
 }
-
+function Loading() {
+  return (
+    <>
+      <div>상품을 불러오는 중 입니다. </div>
+    </>
+  );
+}
 export default App;
