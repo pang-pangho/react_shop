@@ -5,13 +5,16 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { useState } from "react";
+import { createContext, useState } from "react";
 import data from "./data.js";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Detail from "./routes/detail.js";
 import axios from "axios";
-
+import Cart from "./routes/Cart.js";
+export let Context1 = createContext();
 function App() {
+  let [재고] = useState([10, 11, 12]);
+
   let [shose, setShose] = useState(data);
   let [count, setCount] = useState(1);
   let [load, setLoad] = useState(true);
@@ -108,8 +111,16 @@ function App() {
             </>
           }
         />
-        <Route path="/detail/:id" element={<Detail shose={shose} />} />
 
+        <Route
+          path="/detail/:id"
+          element={
+            <Context1.Provider value={{ 재고, shose }}>
+              <Detail shose={shose} />
+            </Context1.Provider>
+          }
+        />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/about" element={<div>어바웃 페이지입니다.</div>} />
         <Route path="/event" element={<Event />}>
           <Route path="one" element={<div>첫 주문시 양배추즙 서비스</div>} />
@@ -153,4 +164,5 @@ function Loading() {
     </>
   );
 }
+
 export default App;
