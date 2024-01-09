@@ -4,8 +4,11 @@ import { useState } from "react";
 import styled from "styled-components";
 import { Nav } from "react-bootstrap";
 import { Context1 } from "./../App.js";
+import { addCart } from "../store.js";
+import { useDispatch, useSelector } from "react-redux";
 
 function Detail(props) {
+  let dispatch = useDispatch();
   let { 재고, shose } = useContext(Context1);
   useEffect(() => {
     //mount, update시 코드 실행시켜주는 useEffect html렌더링 후 동작한다.
@@ -51,7 +54,15 @@ function Detail(props) {
           <h4 className="pt-5">{findProd.title}</h4>
           <p>{findProd.content}</p>
           <p>{findProd.price}원</p>
-          <button className="btn btn-danger">주문하기</button>
+          <button
+            onClick={() => {
+              dispatch(addCart(findProd));
+              console.log(findProd);
+            }}
+            className="btn btn-danger"
+          >
+            주문하기
+          </button>
         </div>
       </div>
       <Nav variant="tabs" defaultActiveKey="link0">

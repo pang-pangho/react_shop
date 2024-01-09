@@ -33,8 +33,13 @@ function App() {
               상세페이지
             </Nav.Link>
             <Nav.Link href="#features">상의</Nav.Link>
-            <Nav.Link href="#pricing">하의</Nav.Link>
-            <Nav.Link href="#pricing">악세서리</Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("./Cart");
+              }}
+            >
+              장바구니
+            </Nav.Link>
             <Nav.Link href="#pricing" className="navLogin">
               로그인
             </Nav.Link>
