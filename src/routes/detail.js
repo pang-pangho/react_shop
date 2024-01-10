@@ -68,17 +68,17 @@ function Detail(props) {
       <Nav variant="tabs" defaultActiveKey="link0">
         <Nav.Item>
           <Nav.Link eventKey="link0" onClick={() => 탭변경(0)}>
-            버튼0
+            상품정보
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link1" onClick={() => 탭변경(1)}>
-            버튼1
+            환불규정
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link2" onClick={() => 탭변경(2)}>
-            버튼2
+            문의사항
           </Nav.Link>
         </Nav.Item>
       </Nav>

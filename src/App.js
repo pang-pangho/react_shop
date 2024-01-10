@@ -32,7 +32,6 @@ function App() {
             >
               상세페이지
             </Nav.Link>
-            <Nav.Link href="#features">상의</Nav.Link>
             <Nav.Link
               onClick={() => {
                 navigate("./Cart");
@@ -57,7 +56,9 @@ function App() {
               <div className="container">
                 <div className="row">
                   {shose.map(function (a, i) {
-                    return <ShoesContent shose={shose[i]} />;
+                    return (
+                      <ShoesContent shose={shose[i]} navigate={navigate} />
+                    );
                   })}
                 </div>
               </div>
@@ -135,13 +136,19 @@ function App() {
     </div>
   );
 }
-function ShoesContent(props, title) {
-  return (
-    <div className="col-md-4">
-      <img src={props.shose.img} alt="shoseImg" width="80%" />
+function ShoesContent(props) {
+  const { id, img, title, content } = props.shose;
+  const navigate = useNavigate();
 
-      <h4>{props.shose.title}</h4>
-      <p>{props.shose.content}</p>
+  const handleImageClick = () => {
+    navigate(`/detail/${id}`);
+  };
+
+  return (
+    <div className="col-md-4" onClick={handleImageClick}>
+      <img src={img} alt="shoseImg" width="80%" />
+      <h4>{title}</h4>
+      <p>{content}</p>
     </div>
   );
 }

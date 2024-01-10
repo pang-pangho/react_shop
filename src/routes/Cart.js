@@ -15,14 +15,7 @@ function Cart() {
   console.log(장바구니State);
   return (
     <div>
-      {testState.name} {testState.age}의 장바구니
-      <button
-        onClick={() => {
-          dispatch(changeAge());
-        }}
-      >
-        버튼
-      </button>
+      {testState.name} {testState.age}님의 장바구니
       <Table>
         <thead>
           <tr>

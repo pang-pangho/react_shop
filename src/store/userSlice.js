@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 let user = createSlice({
   name: "user",
-  initialState: { name: "kim", age: 20 },
+  initialState: { name: "김광호", age: "25세" },
   reducers: {
     changeName(state) {
       state.name = "park";
