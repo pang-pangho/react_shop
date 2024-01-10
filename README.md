@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# React를 활용한 쇼핑몰 미니 프로젝트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 소개
+이 프로젝트는 React를 기반으로 한 간단한 쇼핑몰 미니 프로젝트입니다. React Router를 사용하여 페이지 간의 네비게이션을 관리하고, Styled Components로 컴포넌트 스타일링을 적용했습니다. React Bootstrap을 활용하여 빠르고 쉽게 반응형 디자인을 구현하였으며, axios를 이용하여 비동기적인 데이터 통신을 수행합니다. 상태 관리를 위해 Redux Toolkit을 도입하여 전역 상태를 효과적으로 관리하고 있습니다.
 
-## Available Scripts
+## 사용된 라이브러리
 
-In the project directory, you can run:
+- [React Router](https://reactrouter.com/)
+- [Styled Components](https://styled-components.com/)
+- [React Bootstrap](https://react-bootstrap.github.io/)
+- [axios](https://github.com/axios/axios)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
 
-### `npm start`
+## 내부 이미지
+<img width="959" alt="image" src="https://github.com/pang-pangho/react_shop/assets/128563719/25c4ff9d-016b-468f-87bd-1009a4348b5c">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<img width="615" alt="image" src="https://github.com/pang-pangho/react_shop/assets/128563719/ce79ace0-6489-4881-8607-47054a0b4f95">
+<br>해당 이미지 클릭시 각 상품에 맞는 페이지로 이동 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<img width="802" alt="image" src="https://github.com/pang-pangho/react_shop/assets/128563719/3658bc1f-3761-4cd0-b1dd-cb578081987c">
+<br>상품 디테일 페이지, 구매하기 클릭시 장바구니에 추가 
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img width="957" alt="image" src="https://github.com/pang-pangho/react_shop/assets/128563719/1799f127-3b7a-4677-8375-fe11ae59d652">
+<br> 장바구니 페이지, 개별 상품 추가(+버튼) 및 삭제기능 구현
